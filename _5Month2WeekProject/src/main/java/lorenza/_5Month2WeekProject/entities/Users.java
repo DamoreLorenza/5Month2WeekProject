@@ -31,4 +31,8 @@ public class Users {
         @OneToMany(mappedBy = "users")
         @Column(name = "device")
         private Device device;
+
+        public Users() {
+
+        }
 }

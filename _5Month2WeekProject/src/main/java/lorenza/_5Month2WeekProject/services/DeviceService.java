@@ -3,6 +3,8 @@ package lorenza._5Month2WeekProject.services;
 import lorenza._5Month2WeekProject.entities.Device;
 import lorenza._5Month2WeekProject.entities.Users;
 import lorenza._5Month2WeekProject.exception.NotFoundException;
+import lorenza._5Month2WeekProject.payloads.NewDeviceDTO;
+import lorenza._5Month2WeekProject.payloads.NewUserDTO;
 import lorenza._5Month2WeekProject.repositories.DeviceDAO;
 import lorenza._5Month2WeekProject.repositories.UsersDAO;
 import org.hibernate.query.Page;
@@ -25,8 +27,11 @@ public class DeviceService {
         return deviceDAO.findAll(pageable);
     }
 
-    public Device save(Device body) {
-        return deviceDAO.save(body);
+    public Device save(NewDeviceDTO body) {
+        Device newDevice = new Device();
+        newDevice.setType(body.type());
+        newDevice.setState(body.state());
+        return deviceDAO.save(newDevice);
     }
 
     public Device findById(UUID uuid) {

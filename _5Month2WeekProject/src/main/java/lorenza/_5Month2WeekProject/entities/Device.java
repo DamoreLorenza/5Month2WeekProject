@@ -28,4 +28,7 @@ public class Device {
     @JoinColumn(name = "users")
     private Users users;
 
+    public Device() {
+
+    }
 }

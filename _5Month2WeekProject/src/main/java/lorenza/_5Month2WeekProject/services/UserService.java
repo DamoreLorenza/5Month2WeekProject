@@ -2,6 +2,7 @@ package lorenza._5Month2WeekProject.services;
 
 import lorenza._5Month2WeekProject.entities.Users;
 import lorenza._5Month2WeekProject.exception.NotFoundException;
+import lorenza._5Month2WeekProject.payloads.NewUserDTO;
 import lorenza._5Month2WeekProject.repositories.UsersDAO;
 import org.apache.catalina.User;
 import org.hibernate.query.Page;
@@ -24,8 +25,13 @@ public class UserService {
         return usersDAO.findAll(pageable);
     }
 
-    public Users save(Users body) {
-        return usersDAO.save(body);
+    public Users save(NewUserDTO body) {
+        Users newUser = new Users();
+        newUser.setName(body.name());
+        newUser.setSurname(body.surname());
+        newUser.setUsername(body.username());
+        newUser.setEmail(body.email());
+        return usersDAO.save(newUser);
     }
 
     public Users findById(UUID uuid) {
