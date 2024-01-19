@@ -4,7 +4,6 @@ import lorenza._5Month2WeekProject.entities.Users;
 import lorenza._5Month2WeekProject.exception.NotFoundException;
 import lorenza._5Month2WeekProject.payloads.NewUserDTO;
 import lorenza._5Month2WeekProject.repositories.UsersDAO;
-import org.apache.catalina.User;
 import org.hibernate.query.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

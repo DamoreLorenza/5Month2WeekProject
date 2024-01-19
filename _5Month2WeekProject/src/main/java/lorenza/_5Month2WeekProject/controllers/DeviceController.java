@@ -1,14 +1,11 @@
 package lorenza._5Month2WeekProject.controllers;
 
 import lorenza._5Month2WeekProject.entities.Device;
-import lorenza._5Month2WeekProject.entities.Users;
 import lorenza._5Month2WeekProject.exception.BadRequestException;
 import lorenza._5Month2WeekProject.payloads.NewDeviceDTO;
 import lorenza._5Month2WeekProject.payloads.NewDeviceResponseDTO;
-import lorenza._5Month2WeekProject.payloads.NewUserDTO;
 import lorenza._5Month2WeekProject.payloads.NewUserResponseDTO;
 import lorenza._5Month2WeekProject.services.DeviceService;
-import lorenza._5Month2WeekProject.services.UserService;
 import org.hibernate.query.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
